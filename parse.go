@@ -13,12 +13,14 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "psv"
 	app.Usage = "parse csv"
+	app.Author = "nar"
+	app.Version = "0.1.0"
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "separator, s",
 			Value: ",",
-			Usage: "separater for fields",
+			Usage: "output separater for fields",
 		},
 	}
 
