@@ -6,6 +6,7 @@ import (
 	"github.com/codegangsta/cli"
 	"io"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -13,9 +14,18 @@ func main() {
 	app.Name = "psv"
 	app.Usage = "parse csv"
 
+	app.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "separator, s",
+			Value: ",",
+			Usage: "separater for fields",
+		},
+	}
+
 	app.Action = func(c *cli.Context) {
 		var fp *os.File
 		la := len(c.Args())
+		sep := c.String("separator")
 
 		switch {
 		case la == 0:
@@ -41,7 +51,7 @@ func main() {
 			} else if err != nil {
 				panic(err)
 			}
-			fmt.Println(record)
+			fmt.Println(strings.Join(record, sep))
 		}
 	}
 
