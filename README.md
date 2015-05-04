@@ -1,19 +1,16 @@
 # psv
-simple command line parser for csv
+Simple Command Line Parser for CSV
 
-## usage:
+Usage
+-----
 
 ```
 psv [options] [csv file]
 ```
 
-## options:
+Options
+-------
 
---separator, -s ","  
-output separater for fields
-
---help, -h  
-show help
-
---version, -v  
-print the version
+    --separator, -s [separator]           Set output separater for fields
+    --help, -h                            Show help
+    --version, -v                         Print version
